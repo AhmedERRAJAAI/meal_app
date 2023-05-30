@@ -1,0 +1,4 @@
+#Mon May 29 01:11:29 WEST 2023
+base.0=/Users/ahmed/developement/mobile/meal_app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
