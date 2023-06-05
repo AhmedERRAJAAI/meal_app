@@ -1,11 +1,19 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import './categories_screen.dart';
-import './category_meals_screen.dart';
-import './meal_content_screen.dart';
 
-void main() => runApp(MyApp());
+import './screens/categories_screen.dart';
+import './screens/favorite_screen.dart';
+import './screens/category_meals_screen.dart';
+import './screens/meal_content_screen.dart';
+import './screens/tabs_screen.dart';
+import './screens/filters_screen.dart';
 
-// image: AssetImage('images/my_img.jpeg'),
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
         colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.amber),
-        canvasColor: Color.fromARGB(255, 239, 239, 239),
+        canvasColor: const Color.fromARGB(255, 239, 239, 239),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
@@ -29,9 +37,16 @@ class MyApp extends StatelessWidget {
             ),
       ),
       routes: {
-        MealContentScreen.routeName : (ctx) => MealContentScreen(),
-        CategoriesScreen.routeName: (ctx) => const CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
+        // CategoriesScreen.routeName: (ctx) => const CategoriesScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
+        MealContentScreen.routeName: (ctx) => MealContentScreen(),
         CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
+        FavotiteScreen.routeName: (ctx) => FavotiteScreen(),
+      },
+      onUnknownRoute: (settings) {
+        //displays when flutter failed to find a the given route (404)
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
   }

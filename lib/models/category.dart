@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Category {
@@ -11,6 +10,13 @@ class Category {
     required this.title,
     this.color = Colors.orange,
   });
+}
+
+enum Complexity {
+  // used to create like drop list data in django orm
+  Simple,
+  hard,
+  normal,
 }
 
 class Meal {
