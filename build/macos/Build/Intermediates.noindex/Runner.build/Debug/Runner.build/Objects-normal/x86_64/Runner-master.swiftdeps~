@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "e09c21e708e601be68ef299abacc954902fa172353dbc453c358266f957e6912"
+build_start_time: [1686135541, 61890000]
+build_end_time: [1686135541, 178262000]
+inputs:
+  "/Users/ahmed/developement/mobile/MyApps/meal_app/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1686135516, 609974832]
+  "/Users/ahmed/developement/mobile/MyApps/meal_app/macos/Runner/AppDelegate.swift": !private [1671141058, 0]
+  "/Users/ahmed/developement/mobile/MyApps/meal_app/macos/Runner/MainFlutterWindow.swift": !private [1671141058, 0]

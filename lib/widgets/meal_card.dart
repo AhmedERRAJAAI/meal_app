@@ -3,13 +3,13 @@ import '../screens/meal_content_screen.dart';
 import '../bluePrints/category_meals.dart';
 
 class MealCard extends StatefulWidget {
-
   final String id;
   final String mealImage;
   final String mealTitle;
   final String mealContent;
   final String categ;
   final Color categoryColor;
+  final Function removeMeal;
 
   MealCard({
     required this.id,
@@ -18,6 +18,7 @@ class MealCard extends StatefulWidget {
     required this.mealContent,
     required this.categ,
     required this.categoryColor,
+    required this.removeMeal,
   });
   @override
   State<MealCard> createState() => _MealCardState();
@@ -27,15 +28,21 @@ class _MealCardState extends State<MealCard> {
   var isFav = false; //should be outside of the build function
 
   void navigateTo(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(MealContentScreen.routeName,
-        arguments: MealData(
-          id: widget.id,
-          image: widget.mealImage,
-          title: widget.mealTitle,
-          color: widget.categoryColor,
-          content: widget.mealContent,
-          categ: widget.categ,
-        ));
+    Navigator.of(ctx)
+        .pushNamed(MealContentScreen.routeName,
+            arguments: MealData(
+              id: widget.id, //we use the widget object with the statefullwidget
+              image: widget.mealImage,
+              title: widget.mealTitle,
+              color: widget.categoryColor,
+              content: widget.mealContent,
+              categ: widget.categ,
+            ))
+        .then((result) {
+      if (result != null) {
+        widget.removeMeal(result);
+      }
+    });
   }
 
   @override
@@ -103,6 +110,5 @@ class _MealCardState extends State<MealCard> {
         ],
       ),
     );
-    ;
   }
 }

@@ -10,7 +10,7 @@ class FiltersScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Filters'),
       ),
-      drawer: MainDrawer(),
+      drawer: Drawer(child: MainDrawer()),
       body: const Center(
         child: Text('Filters page'),
       ),

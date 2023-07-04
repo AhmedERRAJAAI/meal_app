@@ -1,4 +1,4 @@
-#Wed May 31 22:14:34 WEST 2023
+#Wed Jun 07 13:32:27 WEST 2023
 base.0=/Users/ahmed/developement/mobile/MyApps/meal_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
