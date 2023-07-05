@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.red,
         colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.amber),
         canvasColor: const Color.fromARGB(255, 239, 239, 239),
         fontFamily: 'Raleway',
